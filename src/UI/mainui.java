@@ -68,12 +68,18 @@ public class mainui extends JFrame {
         }
     }
 
+    private void btn_edit_gv() {
+        // TODO gọi ra giao diện sửa giáo viên
+        giaovien gv = new giaovien(conn);
+        gv.setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         var button1 = new JButton();
         var scrollPane1 = new JScrollPane();
         table1 = new JTable();
-        var button2 = new JButton();
+        var btn_edit_gv = new JButton();
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -88,8 +94,9 @@ public class mainui extends JFrame {
             scrollPane1.setViewportView(table1);
         }
 
-        //---- button2 ----
-        button2.setText("text");
+        //---- btn_edit_gv ----
+        btn_edit_gv.setText("S\u1eeda gi\u00e1o vi\u00ean");
+        btn_edit_gv.addActionListener(e -> btn_edit_gv());
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
@@ -101,7 +108,7 @@ public class mainui extends JFrame {
                             .addGap(49, 49, 49)
                             .addComponent(button1)
                             .addGap(80, 80, 80)
-                            .addComponent(button2))
+                            .addComponent(btn_edit_gv))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(26, 26, 26)
                             .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)))
@@ -113,7 +120,7 @@ public class mainui extends JFrame {
                     .addGap(31, 31, 31)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(button1)
-                        .addComponent(button2))
+                        .addComponent(btn_edit_gv))
                     .addGap(18, 18, 18)
                     .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addGap(33, 33, 33))
