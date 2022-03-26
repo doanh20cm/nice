@@ -1,9 +1,6 @@
 package etc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Scanner;
 
 public class dangnhap {
@@ -18,15 +15,15 @@ public class dangnhap {
         Scanner sc = new Scanner(System.in);
 
         // thêm
-        System.out.println("nhập id đi bruh: ");
-        int id = sc.nextInt();
-        System.out.println("nhập tên đi bủh: ");
-        String name = sc.next();
-        String sql =  "insert into test values (?, ?)";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, id);
-        stmt.setString(2,name);
-        System.out.println("Đã thêm " + stmt.executeUpdate() + " dòng");;
+//        System.out.println("nhập id đi bruh: ");
+//        int id = sc.nextInt();
+//        System.out.println("nhập tên đi bủh: ");
+//        String name = sc.next();
+//        String sql =  "insert into test values (?, ?)";
+//        PreparedStatement stmt = conn.prepareStatement(sql);
+//        stmt.setInt(1, id);
+//        stmt.setString(2,name);
+//        System.out.println("Đã thêm " + stmt.executeUpdate() + " dòng");;
 
         // sửa
 //        System.out.println("Tìm id cần sửa: ");
@@ -76,6 +73,51 @@ public class dangnhap {
 //            System.out.println("Đăng nhập thành công");
 //        } else {
 //            System.out.println("Đăng nhập thất bại");
+//        }
+
+//        System.out.println("Username: ");
+//        String username = sc.nextLine();
+//        System.out.println("Password: ");
+//        String password = sc.nextLine();
+//        String sql = "CREATE LOGIN [" + username + "] WITH PASSWORD= N'" + password + "', DEFAULT_DATABASE=[QuanlySinhvien], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF;\n" +
+//        "CREATE USER [" + username + "] FOR LOGIN [" + username + "]\n";
+//        Statement stmt = conn.createStatement();
+//        stmt.execute(sql);
+//        System.out.println("Done");
+
+//        System.out.println("Username: ");
+//        String username = sc.nextLine();
+//        String sql = "DROP USER [" + username + "];\n" + "DROP LOGIN [" + username + "];\n";
+//        Statement stmt = conn.createStatement();
+//        stmt.execute(sql);
+//        System.out.println("Done");
+
+
+//        System.out.println("Username: ");
+//        String username = sc.nextLine();
+//        System.out.println("New username: ");
+//        String usernameafter = sc.nextLine();
+//        System.out.println("Password: ");
+//        String password = sc.nextLine();
+//        String sql = "alter user [" + username + "] with name = [" + usernameafter + "];\n" + "alter login [" + username + "] with name = [" + usernameafter + "], password = N'" + password + "';\n";
+//        Statement stmt = conn.createStatement();
+//        stmt.execute(sql);
+//        System.out.println("Done");
+
+//        System.out.println("Username: ");
+//        String username = sc.nextLine();
+//        String sql = "alter login [" + username + "] disable;\n"; // or enable
+//        Statement stmt = conn.createStatement();
+//        stmt.execute(sql);
+//        System.out.println("Done");
+
+//        String sql ="SELECT name, principal_id,is_disabled,cast(create_date as date),cast(modify_date as date)\n" +
+//        "FROM sys.server_principals \n" +
+//        "where default_database_name = 'QuanlySinhvien'";
+//        Statement stmt = conn.createStatement();
+//        ResultSet rs = stmt.executeQuery(sql);
+//        while (rs.next()) {
+//            System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4) + " " + rs.getString(5));
 //        }
     }
 }

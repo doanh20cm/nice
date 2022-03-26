@@ -13,13 +13,57 @@
        <class>org.jdesktop.layout.GroupLayout</class>
        <void method="setProperty">
         <string>$horizontalGroup</string>
-        <string>par l {space :0:400:x}</string>
+        <string>par l {seq t {space :::x, comp button1:::p::p, space :p:145:p}, seq {space :p:51:p, par t {comp textField3:::::x, comp textField2::l:::x, seq l {space :0:0:x, comp textField1:::p:286:p}}, space :p:61:p}}</string>
        </void>
        <void method="setProperty">
         <string>$verticalGroup</string>
-        <string>par l {space :0:300:x}</string>
+        <string>par l {seq l {space :p:42:p, comp textField3:::p::p, space :::p, comp textField1:::p::p, space :::p, comp textField2:::p::p, space :p:30:p, comp button1:::p:38:p, space ::18:x}}</string>
        </void>
       </object>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JTextField</string>
+        <void property="name">
+         <string>textField1</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JTextField</string>
+        <void property="name">
+         <string>textField2</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Add</string>
+        </void>
+        <void property="name">
+         <string>button1</string>
+        </void>
+        <void method="addEvent">
+         <object class="com.jformdesigner.model.FormEvent">
+          <string>java.awt.event.ActionListener</string>
+          <string>actionPerformed</string>
+          <string>button1</string>
+          <boolean>false</boolean>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JTextField</string>
+        <void property="name">
+         <string>textField3</string>
+        </void>
+       </object>
+      </void>
       <void property="name">
        <string>this</string>
       </void>
