@@ -19,6 +19,7 @@ public class mainui extends JFrame {
     public mainui(Connection connection) {
         initComponents();
         conn = connection;
+
     }
 
     private void button1() {
@@ -70,8 +71,8 @@ public class mainui extends JFrame {
 
     private void btn_edit_gv() {
         // TODO gọi ra giao diện sửa giáo viên
-        giaovien gv = new giaovien(conn);
-        gv.setVisible(true);
+        DIEM diem = new DIEM(conn);
+        diem.setVisible(true);
     }
 
     private void initComponents() {
@@ -95,7 +96,7 @@ public class mainui extends JFrame {
         }
 
         //---- btn_edit_gv ----
-        btn_edit_gv.setText("S\u1eeda gi\u00e1o vi\u00ean");
+        btn_edit_gv.setText("S\u1eeda \u0111i\u1ec3m sinh vi\u00ean");
         btn_edit_gv.addActionListener(e -> btn_edit_gv());
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
@@ -122,7 +123,7 @@ public class mainui extends JFrame {
                         .addComponent(button1)
                         .addComponent(btn_edit_gv))
                     .addGap(18, 18, 18)
-                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                     .addGap(33, 33, 33))
         );
         pack();

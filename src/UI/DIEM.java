@@ -4,9 +4,12 @@
 
 package UI;
 
+import java.awt.event.*;
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.*;
 import javax.swing.GroupLayout;
-import java.sql.Connection;
+import java.sql.*;
 
 /**
  * @author unknown
@@ -15,7 +18,77 @@ public class DIEM extends JFrame {
     public DIEM(Connection connection) {
         initComponents();
         conn = connection;
+        tbDIEM();
+        setCbMSSV();
+
     }
+
+    public void tbDIEM() {
+        try {
+            String sql = "select * from DIEM";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            tbDIEM.setModel(DbUtils.resultSetToTableModel(rs));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void setCbMSSV(){
+        try {
+            String sql = "select * from DIEM";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                cbMSSV.addItem(rs.getInt(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void scrollPane2MouseClicked() {
+        // TODO add your code here
+    }
+
+    private void tbDIEMMouseClicked() {
+        // TODO add your code here
+        try{
+//            int row = tbDIEM.getSelectedRow();// lấy số dòng được chọn(getSelectedRow())
+//            txttest.setText(String.valueOf(row));
+            //get number of selected row
+
+//            int [] rows = tbDIEM.getSelectedRows();
+//            txttest.setText(rows[0]+"" + rows[1]+"" + rows[2] + "" + rows[3]);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void btnXOA() {
+        // TODO add your code here
+        int [] rows = tbDIEM.getSelectedRows();// row = 0,3, row[0] = 0, row[1] = 3
+        int length = rows.length;
+        String sv = tbDIEM.getValueAt(rows[0],0).toString();
+        String sv1 = tbDIEM.getValueAt(rows[1],0).toString();
+        String sql ="delete from DIEM where MSSV = ?";
+        String sql1 = "";
+        for (int i = 0; i < length - 1; i++)// vòng lặp này dùng để xóa các dòng được chọn
+        {
+            sql1 = " or MSSV = ? ";
+
+        }
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql+sql1);
+            pst.setString(1,sv);
+            pst.setString(2,sv1);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -36,6 +109,7 @@ public class DIEM extends JFrame {
         btnSUA = new JButton();
         btnXOA = new JButton();
         btnTHOAT = new JButton();
+        txttest = new JTextField();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -60,6 +134,20 @@ public class DIEM extends JFrame {
 
         //======== scrollPane2 ========
         {
+            scrollPane2.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    scrollPane2MouseClicked();
+                }
+            });
+
+            //---- tbDIEM ----
+            tbDIEM.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    tbDIEMMouseClicked();
+                }
+            });
             scrollPane2.setViewportView(tbDIEM);
         }
 
@@ -71,6 +159,7 @@ public class DIEM extends JFrame {
 
         //---- btnXOA ----
         btnXOA.setText("X\u00f3a");
+        btnXOA.addActionListener(e -> btnXOA());
 
         //---- btnTHOAT ----
         btnTHOAT.setText("Tho\u00e1t");
@@ -117,9 +206,12 @@ public class DIEM extends JFrame {
                             .addGap(149, 149, 149)
                             .addComponent(label1, GroupLayout.PREFERRED_SIZE, 285, GroupLayout.PREFERRED_SIZE))
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(23, 23, 23)
-                            .addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 73, Short.MAX_VALUE))
+                            .addGap(27, 27, 27)
+                            .addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGap(35, 35, 35)
+                            .addComponent(txttest, GroupLayout.PREFERRED_SIZE, 215, GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 69, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -146,9 +238,11 @@ public class DIEM extends JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtDIEMTP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                    .addGap(28, 28, 28)
                     .addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-                    .addGap(45, 45, 45))
+                    .addGap(60, 60, 60)
+                    .addComponent(txttest, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(77, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -175,6 +269,7 @@ public class DIEM extends JFrame {
     private JButton btnSUA;
     private JButton btnXOA;
     private JButton btnTHOAT;
+    private JTextField txttest;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     static Connection conn;
 }
