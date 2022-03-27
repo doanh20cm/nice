@@ -1,0 +1,77 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:17:p, par l:::p {comp label4::::52:x, comp label3::::52:x, comp label2::::52:x}, space :::p, par l {seq {comp cbMSSV:::p::p, space :p:26:p, comp label5:::p:52:p, space u:::p, comp txtDIEMTHI:::p:80:p, space :p:53:p, comp btnTHEM:::p::p, space :::p, comp btnSUA:::p::p, space ::8:x}, seq {par l:::p {comp cbMAMON:::::x, comp txtDIEMTP:::::x}, space :p:26:p, comp label6:::p:52:p, space u:::p, comp txtMADIEM:::p:80:p, space :p:53:p, comp btnXOA:::p::p, space :::p, comp btnTHOAT:::p::p, space :0:8:x}}}, seq {par l {seq {space :p:149:p, comp label1:::p:285:p}, seq l {space :p:23:p, comp scrollPane2:::p::p}}, space :0:73:x}}"
+			"$verticalGroup": "par l {seq l {space :p:15:p, comp label1:::p:25:p, space s:::p, par b {comp label2::l:p:34:p, comp cbMSSV::b:p::p, comp label5::b:p:34:p, comp txtDIEMTHI::b:p::p, comp btnTHEM::b:p::p, comp btnSUA::b:p::p}, space u:::p, par b {comp label3::b:p:34:p, comp cbMAMON::b:p::p, comp label6::b:p:34:p, comp txtMADIEM::b:p::p, comp btnXOA::b:p::p, comp btnTHOAT::b:p::p}, space u:::p, par b {comp label4::b:p:34:p, comp txtDIEMTP::b:p::p}, space ::34:x, comp scrollPane2:::p:200:p, space :p:45:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Điểm Sinh Viên"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "MSSV:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbMSSV"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "MAMON:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbMAMON"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "DIEMTP:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtDIEMTP"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "DIEMTHI:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtDIEMTHI"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "MADIEM:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtMADIEM"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tbDIEM"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnTHEM"
+				"text": "Thêm"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnSUA"
+				"text": "Sửa"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnXOA"
+				"text": "Xóa"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnTHOAT"
+				"text": "Thoát"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 550, 495 )
+		} )
+	}
+}

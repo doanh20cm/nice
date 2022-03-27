@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class dangnhap {
     public static void main(String[] args) throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-DPLN7UU\\SQLEXPRESS:1433;database=QuanlySinhvien;user=sa;password=12345");
+        Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=QuanlySinhvien;user=sa;password=12345");
         if (conn != null) {
             System.out.println("Kết nối thành công");
         } else {

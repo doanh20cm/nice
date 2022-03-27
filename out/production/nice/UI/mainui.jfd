@@ -1,0 +1,42 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:49:p, comp button1:::p::p, space :p:80:p, comp btn_edit_gv:::p::p}, seq l {space :p:26:p, comp scrollPane1::::402:x}}, space :p:30:p}}"
+			"$verticalGroup": "par l {seq l {space :p:31:p, par b {comp button1::b:p::p, comp btn_edit_gv::b:p::p}, space s:::p, comp scrollPane1::::210:x, space :p:33:p}}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Xem"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", false ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn_edit_gv"
+				"text": "Sửa giáo viên"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_edit_gv", false ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 460, 370 )
+		} )
+	}
+}
