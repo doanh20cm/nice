@@ -4,14 +4,10 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:17:p, par l:::p {comp label4::::52:x, comp label3::::52:x, comp label2::::52:x}, space :::p, par l {seq {comp cbMSSV:::p::p, space :p:26:p, comp label5:::p:52:p, space u:::p, comp txtDIEMTHI:::p:80:p, space :p:53:p, comp btnTHEM:::p::p, space :::p, comp btnSUA:::p::p, space ::8:x}, seq {par l:::p {comp cbMAMON:::::x, comp txtDIEMTP:::::x}, space :p:26:p, comp label6:::p:52:p, space u:::p, comp txtMADIEM:::p:80:p, space :p:53:p, comp btnXOA:::p::p, space :::p, comp btnTHOAT:::p::p, space :0:8:x}}}, seq {par l {seq {space :p:149:p, comp label1:::p:285:p}, seq l {space :p:27:p, comp scrollPane2:::p::p}, seq l {space :p:35:p, comp txttest:::p:215:p}}, space :0:69:x}}"
-			"$verticalGroup": "par l {seq l {space :p:15:p, comp label1:::p:25:p, space s:::p, par b {comp label2::l:p:34:p, comp cbMSSV::b:p::p, comp label5::b:p:34:p, comp txtDIEMTHI::b:p::p, comp btnTHEM::b:p::p, comp btnSUA::b:p::p}, space u:::p, par b {comp label3::b:p:34:p, comp cbMAMON::b:p::p, comp label6::b:p:34:p, comp txtMADIEM::b:p::p, comp btnXOA::b:p::p, comp btnTHOAT::b:p::p}, space u:::p, par b {comp label4::b:p:34:p, comp txtDIEMTP::b:p::p}, space :p:28:p, comp scrollPane2:::p:200:p, space :p:60:p, comp txttest:::p:49:p, space ::77:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {par l {seq {space ::18:x, par t {comp label3:::p:52:p, comp label6:::p::p}}, seq {space :p:17:p, comp label2::::53:x}}, space :::p, par l:::p {comp cbTENMON::::100:x, comp cbMAMON::l::100:x, comp cbMSSV::l::100:x}, space :p:73:p, par t {comp label4:::p:52:p, comp label5:::p:52:p, comp label7::l:p::p}, space s:::p, par l:::p {comp cbTENLOP::::100:x, comp txtDIEMTP::l::100:x, comp txtDIEMTHI::l::100:x}, space :p:128:p}, comp scrollPane2::l::547:x, seq t {space :::p, comp btnTHEM:::p::p, space :p:32:p, comp btnSUA:::p::p, space :p:38:p, comp btnXOA:::p::p, space ::48:x, comp btnLOC:::p::p, space :p:27:p, comp btnTHOAT:::p:81:p}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:27:p, par b {comp label5::b:p:34:p, comp label2::b:p:34:p, comp cbMSSV::b:p::p, comp txtDIEMTHI::b:p::p}, space s:::p, par b {comp label3::b:p:34:p, comp label4::b:p:34:p, comp cbMAMON::b:p::p, comp txtDIEMTP::b:p::p}, par l {seq l {space :p:21:p, par b {comp label6::b:p:38:p, comp cbTENMON::b:p::p}}, seq l {space s:::p, par b {comp label7::b:p:32:p, comp cbTENLOP::b:p::p}}}, space :p:32:p, comp scrollPane2:::p:243:p, space u:::p, par b {comp btnLOC::b:p::p, comp btnTHEM::b:p::p, comp btnXOA::b:p::p, comp btnSUA::b:p::p, comp btnTHOAT::b:p::p}, space :p:64:p}}"
 		} ) {
 			name: "this"
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
-				"text": "Điểm Sinh Viên"
-			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "MSSV:"
@@ -40,13 +36,6 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "txtDIEMTHI"
 			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label6"
-				"text": "MADIEM:"
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "txtMADIEM"
-			} )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane2"
 				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "scrollPane2MouseClicked", false ) )
@@ -58,10 +47,12 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btnTHEM"
 				"text": "Thêm"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnTHEM", false ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btnSUA"
 				"text": "Sửa"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnSUA", false ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btnXOA"
@@ -71,13 +62,30 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btnTHOAT"
 				"text": "Thoát"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnTHOAT", false ) )
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "txttest"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnLOC"
+				"text": "Cập nhật"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnLOC", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "TENMON:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbTENMON"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "TENLOP:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbTENLOP"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 20, 0 )
-			"size": new java.awt.Dimension( 550, 630 )
+			"location": new java.awt.Point( 20, 15 )
+			"size": new java.awt.Dimension( 555, 585 )
 		} )
 	}
 }

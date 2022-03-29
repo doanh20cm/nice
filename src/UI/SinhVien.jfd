@@ -1,0 +1,115 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, par l {comp scrollPane1::::697:x, seq {par l {comp label3::l:p::p, seq l {par l {seq l {par l {par l:::p {comp label2:::::x, comp label1:::::x}, comp label4::l:p::p}, space :p:12:p, par l {par l:l::p {comp cbMSSV:::::x, comp txtHOTENSV:::::x}, comp cbTENLOP::l:p::p}}, seq l {comp label5:::p::p, space s:::p, comp rbtnNam:::p::p, space u:::p, comp rbtnNu:::p::p}}, space :p:225:p, par l:::p {comp label6::l:::x, comp label7::l:p::p, comp label8::l:::x, comp label9:::::x, comp label10:::::x}, space :::p, par l {par l:::p {comp txtNOISINH::::80:x, comp txtCMND::::80:x, comp txtSDT::l::80:x, comp txtEMAIL::l::80:x}, comp cbMALOP::l:p::p}}}, space ::166:x}}}, seq l {space :p:38:p, comp btnThem:::p::p, space :p:66:p, comp btnSua:::p::p, space :p:56:p, comp btnXoa:::p::p, space ::67:x, comp btnCapnhat:::p::p, space :p:50:p, comp btnThoat:::p::p, space :p:33:p}}"
+			"$verticalGroup": "par l {seq l {space u:::p, par b {comp cbMSSV::b:p::p, comp label1::b:p::p, comp label6::b:p::p, comp txtNOISINH::b:p::p}, space u:::p, par b {comp label2::b:p::p, comp txtHOTENSV::b:p::p, comp label7::b:p::p, comp txtCMND::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp label8::b:p::p, comp txtSDT::b:p::p}, space u:::p, par b {comp cbTENLOP::b:p::p, comp label4::b:p::p, comp label9::b:p::p, comp txtEMAIL::b:p::p}, space u:::p, par b {comp label5::b:p::p, comp rbtnNam::b:p::p, comp rbtnNu::b:p::p, comp label10::b:p::p, comp cbMALOP::b:p::p}, space s:::p, comp scrollPane1:::p:240:p, space :p:35:p, par b {comp btnThoat::b:p::p, comp btnThem::b:p::p, comp btnSua::b:p::p, comp btnXoa::b:p::p, comp btnCapnhat::b:p::p}, space ::46:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "MSSV:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbMSSV"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cbMSSV", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "HOTENSV:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtHOTENSV"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "NGAYSINH:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "TENLOP:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbTENLOP"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "GIOITINH:"
+			} )
+			add( new FormComponent( "javax.swing.JRadioButton" ) {
+				name: "rbtnNam"
+				"text": "Nam"
+			} )
+			add( new FormComponent( "javax.swing.JRadioButton" ) {
+				name: "rbtnNu"
+				"text": "Nu"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "NOISINH:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtNOISINH"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "CMND:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtCMND"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "SDT:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtSDT"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "EMAIL:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtEMAIL"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label10"
+				"text": "MALOP:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbMALOP"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tbsinhvien"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnThem"
+				"text": "Thêm"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnSua"
+				"text": "Sửa"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnXoa"
+				"text": "Xóa"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnCapnhat"
+				"text": "Cập nhật"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnThoat"
+				"text": "Thoát"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 10 )
+			"size": new java.awt.Dimension( 705, 605 )
+		} )
+	}
+}

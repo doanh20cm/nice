@@ -69,18 +69,54 @@ public class mainui extends JFrame {
         }
     }
 
+
+
+    private void btn_edit_sv() {
+        // TODO gọi ra giao diện sinh viên
+        SinhVien sv = new SinhVien(conn);
+        sv.setVisible(true);
+    }
+
+
+    private void btnThoat() {
+        // TODO thoát phần mềm
+        int confirmed = JOptionPane.showConfirmDialog(null, "Bạn muốn thoát ?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if (confirmed == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        } else {
+            setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        }
+    }
+
     private void btn_edit_gv() {
-        // TODO gọi ra giao diện sửa giáo viên
+        // TODO gọi ra giao diện giảng viên
+        giaovien gv = new giaovien(conn);
+        gv.setVisible(true);
+    }
+
+    private void btn_edit_diem() {
+        // TODO gọi ra giao diện điểm sinh viên
         DIEM diem = new DIEM(conn);
         diem.setVisible(true);
     }
+
+    private void btn_edit_mh() {
+        // TODO gọi ra giao diện môn học
+        MONHOC mh = new MONHOC(conn);
+        mh.setVisible(true);
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         var button1 = new JButton();
         var scrollPane1 = new JScrollPane();
         table1 = new JTable();
-        var btn_edit_gv = new JButton();
+        btn_edit_sv = new JButton();
+        btnThoat = new JButton();
+        btn_edit_gv = new JButton();
+        btn_edit_diem = new JButton();
+        btn_edit_mh = new JButton();
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -95,25 +131,49 @@ public class mainui extends JFrame {
             scrollPane1.setViewportView(table1);
         }
 
+        //---- btn_edit_sv ----
+        btn_edit_sv.setText("Sinh vi\u00ean");
+        btn_edit_sv.addActionListener(e -> btn_edit_sv());
+
+        //---- btnThoat ----
+        btnThoat.setText("Tho\u00e1t");
+        btnThoat.addActionListener(e -> btnThoat());
+
         //---- btn_edit_gv ----
-        btn_edit_gv.setText("S\u1eeda \u0111i\u1ec3m sinh vi\u00ean");
+        btn_edit_gv.setText("Gi\u1ea3ng vi\u00ean");
         btn_edit_gv.addActionListener(e -> btn_edit_gv());
+
+        //---- btn_edit_diem ----
+        btn_edit_diem.setText("K\u1ebft qu\u1ea3");
+        btn_edit_diem.addActionListener(e -> btn_edit_diem());
+
+        //---- btn_edit_mh ----
+        btn_edit_mh.setText("M\u00f4n h\u1ecdc");
+        btn_edit_mh.addActionListener(e -> btn_edit_mh());
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGap(26, 26, 26)
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(49, 49, 49)
                             .addComponent(button1)
-                            .addGap(80, 80, 80)
-                            .addComponent(btn_edit_gv))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGap(31, 31, 31)
+                            .addComponent(btn_edit_diem)
+                            .addGap(43, 43, 43)
+                            .addComponent(btn_edit_sv)
                             .addGap(26, 26, 26)
-                            .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)))
-                    .addGap(30, 30, 30))
+                            .addComponent(btn_edit_gv)
+                            .addGap(18, 18, 18)
+                            .addComponent(btn_edit_mh)
+                            .addContainerGap(122, Short.MAX_VALUE))
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGroup(contentPaneLayout.createParallelGroup()
+                                .addComponent(btnThoat)
+                                .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 626, GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 21, Short.MAX_VALUE))))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -121,10 +181,15 @@ public class mainui extends JFrame {
                     .addGap(31, 31, 31)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(button1)
-                        .addComponent(btn_edit_gv))
+                        .addComponent(btn_edit_sv)
+                        .addComponent(btn_edit_diem)
+                        .addComponent(btn_edit_gv)
+                        .addComponent(btn_edit_mh))
                     .addGap(18, 18, 18)
-                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                    .addGap(33, 33, 33))
+                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 233, GroupLayout.PREFERRED_SIZE)
+                    .addGap(39, 39, 39)
+                    .addComponent(btnThoat)
+                    .addContainerGap(17, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -134,5 +199,10 @@ public class mainui extends JFrame {
     static Connection conn;
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JTable table1;
+    private JButton btn_edit_sv;
+    private JButton btnThoat;
+    private JButton btn_edit_gv;
+    private JButton btn_edit_diem;
+    private JButton btn_edit_mh;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

@@ -1,0 +1,66 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :::p, par l {seq l {comp label1:::p::p, space :p:12:p, comp cbMAMON:::p::p}, seq l {comp label2:::p::p, space u:::p, comp cbTENMON:::p::p}}, space :p:60:p, par l {comp label4:::p:54:p, comp label3:::p::p}, space s:::p, par l {comp cbMAKHOA::l:p::p, comp txtSOTIET::l:p:80:p}, space :p:75:p, par l {seq {comp btnXoa:::p::p, space u:::p, comp btnThoat:::p::p}, seq {comp btnThem:::p::p, space u:::p, comp btnSua:::p::p}}}, seq l {space :p:79:p, comp scrollPane1:::p:500:p}}, space ::58:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, par b {comp cbMAMON::b:p::p, comp label1::b:p::p, comp label3::b:p::p, comp cbMAKHOA::b:p::p, comp btnThem::b:p::p, comp btnSua::b:p::p}, space u:::p, par b {comp label2::b:p::p, comp cbTENMON::b:p::p, comp label4::b:p::p, comp txtSOTIET::b:p::p, comp btnXoa::b:p::p, comp btnThoat::b:p::p}, space ::60:x, comp scrollPane1:::p:144:p, space :p:56:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "MAMON:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbMAMON"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "TENMON:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbTENMON"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "MAKHOA:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbMAKHOA"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "SOTIET:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtSOTIET"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tbMonhoc"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnThem"
+				"text": "Thêm"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnXoa"
+				"text": "Xóa"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnSua"
+				"text": "Sửa"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnThoat"
+				"text": "Thoát"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 665, 370 )
+		} )
+	}
+}

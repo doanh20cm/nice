@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq {space :p:49:p, comp button1:::p::p, space :p:80:p, comp btn_edit_gv:::p::p}, seq l {space :p:26:p, comp scrollPane1::::402:x}}, space :p:30:p}}"
-			"$verticalGroup": "par l {seq l {space :p:31:p, par b {comp button1::b:p::p, comp btn_edit_gv::b:p::p}, space s:::p, comp scrollPane1::::226:x, space :p:33:p}}"
+			"$horizontalGroup": "par l {seq l {space :p:26:p, par l {seq {comp button1:::p::p, space :p:31:p, comp btn_edit_diem:::p::p, space :p:43:p, comp btn_edit_sv:::p::p, space :p:26:p, comp btn_edit_gv:::p::p, space s:::p, comp btn_edit_mh:::p::p, space ::122:x}, seq {par l {comp btnThoat:::p::p, comp scrollPane1:::p:626:p}, space :0:21:x}}}}"
+			"$verticalGroup": "par l {seq l {space :p:31:p, par b {comp button1::b:p::p, comp btn_edit_sv::b:p::p, comp btn_edit_diem::b:p::p, comp btn_edit_gv::b:p::p, comp btn_edit_mh::b:p::p}, space s:::p, comp scrollPane1:::p:233:p, space :p:39:p, comp btnThoat:::p::p, space ::17:x}}"
 		} ) {
 			name: "this"
 			"defaultCloseOperation": 2
@@ -27,16 +27,33 @@ new FormModel {
 				} )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn_edit_sv"
+				"text": "Sinh viên"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_edit_sv", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnThoat"
+				"text": "Thoát"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnThoat", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btn_edit_gv"
-				"text": "Sửa điểm sinh viên"
-				auxiliary() {
-					"JavaCodeGenerator.variableLocal": true
-				}
+				"text": "Giảng viên"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_edit_gv", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn_edit_diem"
+				"text": "Kết quả"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_edit_diem", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn_edit_mh"
+				"text": "Môn học"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_edit_mh", false ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 460, 370 )
+			"size": new java.awt.Dimension( 675, 430 )
 		} )
 	}
 }
